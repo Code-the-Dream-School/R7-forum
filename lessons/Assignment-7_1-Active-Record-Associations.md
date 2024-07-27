@@ -210,12 +210,12 @@ Ok, now we fill in the methods, one at a time.  Note that for some of them, noth
 ```ruby
 def create
   @post = @forum.posts.new(post_params)  # we create a new post for the current forum
-  @post.save
+  @post.save!
   redirect_to @post, notice: "Your post was created."
 end
 
 def new
-  @post = @forum.posts.new  
+  @post = @forum.posts.new
 end
 
 def edit    # nothing to do here
@@ -225,14 +225,13 @@ def show    # nothing to do here
 end
 
 def update
-  @post = Post.new(post_params)
-  @post.save
+  @post.update!(post_params)
   redirect_to @post, notice: "Your post was updated."
 end
 
 def destroy
   @forum = @post.forum # we need to save this, so we can redirect to the forum after the destroy
-  @post.destroy
+  @post.destroy!
   redirect_to @forum, notice: "Your post was deleted."
 end
 ```
