@@ -32,7 +32,7 @@ private
   end
 end
 ```
-This same code is duplicated in the index method of `app\controllers\user.rb`.  You don't want to repeat yourself, so take it out of the there.  (By the way, the before_action in application_controller.rb is done before any of the before_action methods in the other controllers.)
+This same code is duplicated in the index method of `app/controllers/user_controller.rb`.  You don't want to repeat yourself, so take it out of the there.  (By the way, the before_action in application_controller.rb is done before any of the before_action methods in the other controllers.)
 
 For the navbar, we'll do a little very crude styling. Don't pay much attention to this section! We'll do serious styling in a later lesson, so right now, just copy/paste. Add the following lines to app/assets/stylesheets/application.css:
 ```css
